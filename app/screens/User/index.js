@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import Profile from './components/Profile'
 import RepoFilter from './components/RepoFilter'
 import RepoList from './components/RepoList'
+import FollowerList from './components/FollowerList'
 
 export default class User extends Component {
   constructor() {
@@ -26,6 +27,7 @@ export default class User extends Component {
             <h3>Repositories</h3>
             <RepoFilter onUpdate={this.handleFilterUpdate} />
             <RepoList filter={filter} username={username} />
+            <FollowerList username={username} />
           </div>
         </div>
       </div>

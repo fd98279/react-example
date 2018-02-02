@@ -3,7 +3,7 @@ import _ from 'lodash';
 import {random as randomStarWarsName} from 'starwars-names';
 import moment from 'moment';
 
-export {getRepos, getMockRepo, getMockRepos, getMockUser, getMockOrgs};
+export {getRepos, getMockRepo, getMockRepos, getMockUser, getMockOrgs, getMockFollowers};
 
 function getRepos() {
   return Promise.resolve({
@@ -55,6 +55,7 @@ function getMockUser(overrides = {}) {
   };
 }
 
+
 function getMockOrg(overrides = {}) {
   return {
     avatar_url: 'http://lorempixel.com/512/512/',
@@ -65,4 +66,20 @@ function getMockOrg(overrides = {}) {
 
 function getMockOrgs(number = _.random(1, 10)) {
   return _.times(number, () => getMockOrg());
+}
+
+function getMockFollower(overrides = {}) {
+	  const login = randomStarWarsName();
+	  return {
+	    login,
+	    id: _.random(20, 1000),
+	    avatar_url: 'http://lorempixel.com/512/512/',
+	    gravatar_id: _.random(20, 1000),
+	    html_url: 'http://lorempixel.com/512/512/',
+	    ...overrides,
+	  };
+}
+
+function getMockFollowers(number = _.random(1, 10)) {
+	  return _.times(number, () => getMockFollower());
 }

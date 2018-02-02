@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.github.com';
 
-export {getRepos, getUserData};
+export {getRepos, getUserData, getFollowers};
 
 function getRepos(username) {
   const url = `${BASE_URL}/users/${username}/repos?per_page=250`;
@@ -18,4 +18,10 @@ function getUserData(username) {
     user: user.data,
     orgs: orgs.data,
   }));
+}
+
+
+function getFollowers(username) {
+	  const url = `${BASE_URL}/users/${username}/followers`;
+	  return axios.get(url).then(response => response.data);
 }

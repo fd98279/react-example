@@ -1,7 +1,7 @@
 import moxios from 'moxios';
 import {spy} from 'sinon';
-import {getRepos, getUserData} from './github-api';
-import {getMockRepos, getMockUser, getMockOrgs} from './github-api.stub';
+import {getRepos, getUserData, getFollowers} from './github-api';
+import {getMockRepos, getMockUser, getMockOrgs, getMockFollowers} from './github-api.stub';
 
 describe('GitHub API', () => {
 
@@ -56,4 +56,24 @@ describe('GitHub API', () => {
       });
     });
   });
+  
+  describe('getUserFollowersData', () => {
+      it('should make a request to the proper urls for the given user', done => {
+        const followers = getMockFollowers();
+        const successHandler = spy();
+        moxios.stubRequest(/^https:\/\/api\.github\.com\/users\/kentcdodds\/followers/, {
+          status: 200,
+          response: followers,
+        });
+
+        getFollowers('kentcdodds').then(successHandler);
+        
+        moxios.wait(() => {
+          expect(successHandler).to.have.been.calledOnce;
+          expect(successHandler).to.have.been.calledWith(followers);
+          done();
+        });
+      });
+    });
+  
 });

@@ -9,7 +9,7 @@ function FollowerListItem({follower}) {
         <strong>{follower.follower}</strong>
         <strong>{follower.login}</strong>
         <strong>{follower.id}</strong>
-        <strong>{follower.url}</strong>
+        <a href={follower.url}>{follower.url}</a>
       </div>
     </li>
   );

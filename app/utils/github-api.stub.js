@@ -3,7 +3,7 @@ import _ from 'lodash';
 import {random as randomStarWarsName} from 'starwars-names';
 import moment from 'moment';
 
-export {getRepos, getMockRepo, getMockRepos, getMockUser, getMockOrgs, getMockFollowers};
+export {getRepos, getMockRepo, getMockRepos, getMockUser, getMockOrgs, getMockFollower, getMockFollowers};
 
 function getRepos() {
   return Promise.resolve({

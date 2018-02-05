@@ -14,7 +14,8 @@
     "start:backend": "node ./react-sqllite/server.js",
     "setup": "npm install && npm run validate",
     "validate": "npm-run-all lint test build",
-    "watch:dev": "npm-run-all test:watch lint:watch"
+    "watch:dev": "npm-run-all test:watch lint:watch",
+    "run:all": "npm-run-all start:backend dev"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,7 @@
   "homepage": "https://github.com/mzabriskie/react-example",
   "dependencies": {
     "axios": "0.13.1",
-    "body-parser": "^1.18.2",    
+    "body-parser": "^1.18.2",
     "bootstrap": "^3.3.5",
     "history": "^3.0.0",
     "moment": "^2.10.6",

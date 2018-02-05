@@ -4,13 +4,13 @@
   "description": "Simple React example app",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --content-base ./ --env.dev",
-    "build": "webpack --env.prod",
+    "dev": "node_modules/.bin/webpack-dev-server --inline --content-base ./ --env.dev",
+    "build": "node_modules/.bin/webpack --env.prod",
     "lint": "node_modules/.bin/esw webpack.config.* app test",
     "test": "cross-env NODE_ENV=test nyc mocha",
-    "test:watch": "mocha --watch --compilers js:babel-register",
+    "test:watch": "node_modules/.bin/mocha --watch --compilers js:babel-register",
     "lint:watch": "npm run lint -- --watch",
-    "start": "http-server",
+    "start": "node_modules/.bin/http-server",
     "setup": "npm install && npm run validate",
     "validate": "npm-run-all lint test build",
     "watch:dev": "npm-run-all test:watch lint:watch"
@@ -33,7 +33,9 @@
     "react": "15.3.0",
     "react-dom": "15.3.0",
     "react-router": "2.6.1",
-    "react-tooltip": "3.1.5"
+    "react-tooltip": "3.1.5",
+    "sqlite": "^2.9.1",
+    "sqlite3": "^3.1.13"
   },
   "devDependencies": {
     "babel-core": "6.13.2",
@@ -48,14 +50,14 @@
     "cross-env": "2.0.0",
     "css-loader": "0.23.1",
     "enzyme": "2.4.1",
-    "eslint": "3.2.2",
+    "eslint": "^3.2.2",
     "eslint-config-kentcdodds": "^9.0.2",
     "eslint-watch": "^3.1.3",
     "file-loader": "0.9.0",
     "http-server": "0.9.0",
     "jsdom": "9.4.1",
     "lodash": "4.14.2",
-    "mocha": "3.0.2",
+    "mocha": "^3.0.2",
     "moxios": "0.3.0",
     "npm-run-all": "2.3.0",
     "nyc": "7.1.0",
@@ -66,7 +68,7 @@
     "style-loader": "^0.13.0",
     "webpack": "2.1.0-beta.20",
     "webpack-config-utils": "2.0.0",
-    "webpack-dev-server": "2.1.0-beta.0",
+    "webpack-dev-server": "^2.1.0-beta.0",
     "webpack-validator": "2.2.7"
   },
   "nyc": {

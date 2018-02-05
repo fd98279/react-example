@@ -8,6 +8,6 @@ describe('FollowerListItem', () => {
   it('FollowerListItem Should display url', () => {
     const follower = getMockFollower({url: 'http://test'});
     const wrapper = render(<FollowerListItem follower={follower} />);
-    expect(wrapper.find('[href="http://test"]')).to.not.be.undefined;;
+    expect(wrapper.find('[href="http://test"]')).to.not.be.undefined;
   });
 });

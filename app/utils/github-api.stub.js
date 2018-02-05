@@ -3,13 +3,21 @@ import _ from 'lodash';
 import {random as randomStarWarsName} from 'starwars-names';
 import moment from 'moment';
 
-export {getRepos, getMockRepo, getMockRepos, getMockUser, getMockOrgs, getMockFollower, getMockFollowers};
+export {getRepos, getFollowers, 
+	getMockRepo, getMockRepos, getMockUser, getMockOrgs, 
+	getMockFollower, getMockFollowers};
 
 function getRepos() {
   return Promise.resolve({
     data: getMockRepos(),
   });
 }
+
+function getFollowers() {
+	  return Promise.resolve({
+	    data: getMockFollowers(),
+	  });
+	}
 
 function getMockRepos(number = _.random(1, 40)) {
   return _.times(number, () => getMockRepo());

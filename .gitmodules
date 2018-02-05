@@ -1,0 +1,3 @@
+[submodule "react-sqllite"]
+	path = react-sqllite
+	url = https://github.com/fd98279/react-sqllite.git

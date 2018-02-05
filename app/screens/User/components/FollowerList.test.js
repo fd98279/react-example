@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import {spy} from 'sinon';
-import {getMockFollower} from '../../../utils/github-api.stub';
+import {getFollowers, getMockFollowers} from '../../../utils/github-api.stub';
 import FollowerList from './FollowerList';
 
 function mountComponent(props = {}) {

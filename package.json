@@ -11,6 +11,7 @@
     "test:watch": "node_modules/.bin/mocha --watch --compilers js:babel-register",
     "lint:watch": "npm run lint -- --watch",
     "start": "node_modules/.bin/http-server",
+    "start:backend": "node ./react-sqllite/server.js",
     "setup": "npm install && npm run validate",
     "validate": "npm-run-all lint test build",
     "watch:dev": "npm-run-all test:watch lint:watch"
@@ -27,6 +28,7 @@
   "homepage": "https://github.com/mzabriskie/react-example",
   "dependencies": {
     "axios": "0.13.1",
+    "body-parser": "^1.18.2",    
     "bootstrap": "^3.3.5",
     "history": "^3.0.0",
     "moment": "^2.10.6",

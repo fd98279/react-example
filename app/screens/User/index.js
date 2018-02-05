@@ -1,8 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import Profile from './components/Profile'
-import RepoFilter from './components/RepoFilter'
-import RepoList from './components/RepoList'
-import FollowerList from './components/FollowerList'
 import UserList from './components/UserList'
 
 export default class User extends Component {
@@ -21,18 +17,7 @@ export default class User extends Component {
     return (
       <div className="container">
         <div className="row">
-          {/*
-          <div className="col-sm-3">
-            <Profile username={username} />
-          </div>
-          */}
           <div className="col-sm-9">
-            {/*
-            <h3>Repositories</h3>
-            <RepoFilter onUpdate={this.handleFilterUpdate} />
-            <RepoList filter={filter} username={username} />
-            <FollowerList username={username} />
-            */}
             <h3>Users</h3>
             <UserList />
           </div>

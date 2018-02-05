@@ -87,7 +87,7 @@ UserEditForm.propTypes = {
 	onIdChange: PropTypes.func.isRequired,
 	onNameChange: PropTypes.func.isRequired,
 	onSave: PropTypes.func.isRequired,
-	oncancel: PropTypes.func.isRequired,
+	onCancel: PropTypes.func.isRequired,
 	saveStatus: PropTypes.string
 };
 

@@ -39,7 +39,7 @@ function saveUser(data) {
 	  return axios.post(url, data).then(response => response.data.rowid);
 }
 
-function deleteAllUsers(data) {	
+function deleteAllUsers() {	
 	  const url = `${SQLLITE_BASE_URL}/users`;
 	  return axios.delete(url).then(response => response.data.rowid);
 }

@@ -1,19 +1,8 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import UserList from './components/UserList'
 
 export default class User extends Component {
-  constructor() {
-    super()
-    this.state = {filter: ''}
-  }
-
-  handleFilterUpdate = (filter) => {
-    this.setState({filter})
-  }
-
   render() {
-    const {username} = this.props.params
-    const {filter} = this.state
     return (
       <div className="container">
         <div className="row">
@@ -27,8 +16,3 @@ export default class User extends Component {
   }
 }
 
-User.propTypes = {
-  params: PropTypes.shape({
-    username: PropTypes.string,
-  }),
-}

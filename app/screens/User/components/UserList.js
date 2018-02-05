@@ -32,8 +32,9 @@ export default class UserList extends Component {
   }
   
   onSave(e) {
-	  if (this.state.currentMode == 'edit' || this.state.currentMode == 'create')
+	  if (this.state.currentMode == 'edit' || this.state.currentMode == 'create' || this.state.currentMode == 'update')
 	  {
+		  console.log(this.state.currentUser);
 		  saveUser(this.state.currentUser).then(this.load());  
 	  }
 	  if (this.state.currentMode == 'delete')
